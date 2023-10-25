@@ -1,20 +1,19 @@
 // import { Routes, Navigate, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Sidebar from "../pages/Sidebar";
-// import CreateAvata from "../pages/CreateAvata";
-// import Login from "../pages/Login";
-// import Frame from "../pages/Frame";
-// import FixSizeImg from "../pages/FixSizeImg";
+import CreateAvata from "../pages/CreateAvata";
+import Login from "../pages/Login";
+import Frame from "../pages/Frame";
 // const Routers = () => {
 
 export const publicRouters = [
-  { path: "/", component: Home },
   { path: "/sidebar", component: Sidebar },
-  // { path: "/contact", component: Contact },
-  // { path: "/cart", component: Cart },
-  // { path: "/about", component: About },
-  // { path: "/productList", component: ProductList },
-  // { path: "/detail/:id/", component: DetaiProduct },
+  { path: "/create-frame", component: Frame },
+  { path: "/create-avata", component: CreateAvata },
+  { path: "/create-avata/:id", component: CreateAvata },
+  { path: "/login", component: Login },
+  { path: "/home", component: Home },
+
 ];
 
 // return (

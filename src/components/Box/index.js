@@ -1,25 +1,25 @@
 import "./Box.scss";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export const Box = ({ props }) => {
-  const { name, dayPost, image, role } = props;
-
+  const { id, name, dayPost, image, role } = props;
+  console.log(props);
+  const navigate = useNavigate();
   const handleClick = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
+    navigate(`/create-avata/${id}`);
   };
   return (
     <div className="item">
       <div className="img__box">
-        <img src={image} alt=""></img>
+        <img src={`http://localhost:4000/${image}`} alt=""></img>
       </div>
       <div className="user__infor">
         <p>Họ tên : {name}</p>
         <p>Chức vụ: {role}</p>
         <p>Ngày đăng : {dayPost}</p>
       </div>
-      <button className="btn-test">
-        <Link to="/create-avata" onClick={handleClick}>
-          Lấy mẫu
-        </Link>
+      <button className="btn-test" onClick={handleClick}>
+        Lấy mẫu
       </button>
     </div>
   );

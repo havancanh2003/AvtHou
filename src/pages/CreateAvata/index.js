@@ -2,12 +2,18 @@ import React, { useState, useEffect, useRef, createRef } from "react";
 import "./CreateAvata.scss";
 import Cropper from "react-cropper";
 import "../FixSizeImg/FixSizeImg.scss";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../../../node_modules/cropperjs/dist/cropper.css"
 // import "../../node_modules/cropperjs/dist/cropper.css";
 
 const CreateAvata = () => {
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
   const [data, setData] = useState("./child.jpg");
+  const {id} = useParams();
+  const navigate = useNavigate();
+
   // create a preview as a side effect, whenever selected file is changed
   useEffect(() => {
     if (!selectedFile) {
@@ -62,6 +68,7 @@ const CreateAvata = () => {
       setSelectedFile(undefined);
       return;
     }
+    console.log(e.target.files[0]);
     // I've kept this example simple by using the first image instead of multiple
     setSelectedFile(e.target.files[0]);
   };
@@ -79,6 +86,11 @@ const CreateAvata = () => {
     a.click();
   };
   // gửi data canvas lên url
+  
+  useEffect(()=>{
+    const url = `http://localhost:4000/api/v1/frame/upload/${id}`
+    id ? axios.get(url).then(res => setPreview(`${res.data.data}`)) : navigate('/create-avata')
+  }) 
   return (
     <form>
       <div className="container__avata">
@@ -100,6 +112,7 @@ const CreateAvata = () => {
             checkOrientation={false}
             guides={true}
             crop={onCrop}
+            zoomable={false}
             className="cropper"
           />
           <div className="box" style={{ width: "50%", float: "right" }}>
