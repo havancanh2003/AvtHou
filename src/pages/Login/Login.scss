@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 20px 200px;
     background: white;
     border-radius: 5px;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.05);  
@@ -18,9 +18,9 @@
 }
 
 .logo img{
-    width: 100%;
+    width: 80%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
     object-position: center;
 }
 

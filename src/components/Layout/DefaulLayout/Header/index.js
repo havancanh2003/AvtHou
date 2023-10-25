@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import "./Header.scss";
 import { Link, NavLink } from "react-router-dom";
+import CustemInput from "../../../Custeminput/index";
+
 const Header = () => {
   // const nav__link = [
   //   {
@@ -42,7 +44,7 @@ const Header = () => {
       {/* Logo */}
       <div className="container__right">
         <div className="logo__img">
-          <img src="/logo.svg" alt="sdeaew" />
+          <img src="/logo_hou.png" alt="sdeaew" />
         </div>
       </div>
 
@@ -59,12 +61,20 @@ const Header = () => {
                     <Link to='/register'>Đăng Ký</Link>
                 </button>
             </li> */}
-        <li className="container__left-item">
+        {/* <li className="container__left-item">
           <button>
             <Link to="login">Đăng Nhập</Link>
           </button>
-        </li>
+        </li> */}
       </ul>
+      <p id='title'>TÊN TRANG WEB</p>
+
+        <CustemInput 
+            type="text" 
+            className="search__input"
+            placeholder="Tìm kiếm khung"
+        />
+        <NavLink id='login' to='/login'>Đăng nhập</NavLink>
     </div>
   );
 };

@@ -9,7 +9,7 @@ function DefaultLayout({ children }) {
         <Sidebar />
         {children}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

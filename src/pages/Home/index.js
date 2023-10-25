@@ -15,11 +15,11 @@ const Home = () => {
         placeholder="Tìm kiếm khung"
       /> */}
       {/* Trang chu , generate avata , contact  */}
-      <div className="container_frame">
+      {/* <div className="container_frame">
         {data.map((user) => (
           <Box props={user} />
         ))}
-      </div>
+      </div> */}
       <CreateAvata className="avt" />
     </section>
   );
