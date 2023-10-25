@@ -10,8 +10,10 @@
     .container__right{
         margin: 0.3rem 20px;
         flex-grow: 1;
+        display: flex;
+        justify-content: center;
         .logo__img{
-            margin-left: 80px;
+            // margin-left: 80px;
             height: 100%;
             width: 80px;
             // border: 2px solid var(--primary-color);
@@ -26,60 +28,25 @@
             }
         }
     };
-    #title {
+    
+    .title {
         font-size: 25pt;
         font-weight: bold;
         text-align: left;
-        padding: 30px;
+        padding: 30px 10px;
         color: rgba(30,6,111,255);
-        flex-grow: 4;
+        // flex-grow: 4;
     }
+
+    #h {
+        text-align: right !important;
+    }
+
     .input__box{
         position: relative;
         
     }
-    // .container__left{
-    //     width: 50%;
-    //     justify-content: center;
-    //     display: flex;
-    //     margin-top:2.5rem; 
-    //     .container__left-item{
-    //         a{
-    //             font-size: 2rem;
-    //             font-weight: bold;
-    //             margin-right: 2rem;
-    //             color: rgba(30,6,111,255);
-    //         }
-    //         button{
-    //             padding: 0.5rem;
-    //             background-color: var(--primary-color);
-    //             // border: 1px solid var(--secondary-color);
-    //             border-radius: 0.5rem;
-    //             margin-left: 3rem;
-    //             text-align: center;
-    //             a{
-    //                 color: rgb(63, 62, 62);
-    //                 font-size: 14pt;
-    //             }
-    //         }
-    //         button:hover{
-    //             transition: all ease-in 0.5s;
-    //             color: white;
-    //             background: var(--primary-color);
-    //             a{
-    //                 color: white;
-    //             }
-    //         }
-    //     }
-    //     .container__left-item:hover{
-    //             a{
-    //                 transition: all ease 0.5s;
-    //                 cursor: pointer;
-    //                 color: var(--secondary-color);
-    //             }
-        // }
 
-// }
     .search__input{
         bottom: 1rem;
         border: 2px solid rgb(118, 118, 118);
@@ -88,7 +55,7 @@
         outline: none;
         font-size: 1.2rem;
         transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
-        margin: auto;
+        margin: auto 100px auto 200px;
         display: flex;
         margin-top: 3rem;
         margin-bottom: 2rem;

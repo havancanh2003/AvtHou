@@ -7,7 +7,7 @@ import "../FixSizeImg/FixSizeImg.scss";
 const CreateAvata = () => {
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
-  const [data, setData] = useState("./child.jpg");
+  const [data, setData] = useState("");
   // create a preview as a side effect, whenever selected file is changed
   useEffect(() => {
     if (!selectedFile) {
@@ -119,26 +119,31 @@ const CreateAvata = () => {
           <canvas id="canvas" ref={canvasRef} width={500} height={500}></canvas>
         </div>
         <div className="container__input">
-          <label>Chọn avata</label>
-          <input
-            type="file"
-            name="photo"
-            id="upload-photo"
-            accept="image/*"
-            onChange={onSelectFileFinal}
-          />
-
-          <label>Chọn farme</label>
-          <input
-            type="file"
-            placeholder="Chọn farme"
-            name="farme"
-            id="upload-farme"
-            accept="image/*"
-            onChange={onSelectFileFrame}
-          />
+          <div>
+            <label>Chọn avatar</label><br/>
+            <input
+              type="file"
+              name="photo"
+              id="upload-photo"
+              accept="image/*"
+              onChange={onSelectFileFinal}
+            />
+          </div>
+          
+          <div>
+            <label>Chọn frame</label><br/>
+            <input
+              type="file"
+              placeholder="Chọn frame"
+              name="farme"
+              id="upload-farme"
+              accept="image/*"
+              onChange={onSelectFileFrame}
+            />
+          </div>
+          
           <button className="btn-success" onClick={saveCrop}>
-            Save
+            Lưu
           </button>
         </div>
       </div>

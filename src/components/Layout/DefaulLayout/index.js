@@ -4,7 +4,7 @@ import Sidebar from "../../../pages/Sidebar";
 function DefaultLayout({ children }) {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="containerLayout" style={{ display: "flex" }}>
         <Sidebar />
         {children}

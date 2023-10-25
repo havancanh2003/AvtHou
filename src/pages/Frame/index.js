@@ -3,7 +3,7 @@ import "./Frame.scss";
 import { Link } from "react-router-dom";
 const Frame = () => {
   return (
-    <div className="container__avata">
+    <div className="container__avata" id="frame_cr">
       <div className="img__box">
         <Link to="/home/custem">
           {/* <canvas></canvas> */}
@@ -11,7 +11,7 @@ const Frame = () => {
         </Link>
       </div>
       <div className="container__input">
-        <label>Chọn farme</label>
+        <label>Chọn frame</label>
         <input
           type="file"
           placeholder="Chọn farme"

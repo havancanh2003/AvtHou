@@ -4,24 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import CustemInput from "../../../Custeminput/index";
 
 const Header = () => {
-  // const nav__link = [
-  //   {
-  //     path: "/home",
-  //     display: "Trang chủ",
-  //   },
-  //   {
-  //     path: "/create-avata",
-  //     display: "Tạo avata",
-  //   },
-  //   {
-  //     path: "/create-frame",
-  //     display: "Tạo frame",
-  //   },
-  //   {
-  //     path: "/contact",
-  //     display: "Contact",
-  //   },
-  // ];
   const headerRef = useRef(null);
   const stickyHeaderFunc = () => {
     window.addEventListener("scroll", () => {
@@ -43,38 +25,20 @@ const Header = () => {
     <div className="container__header" ref={headerRef}>
       {/* Logo */}
       <div className="container__right">
+        <span class='title' id='h'>AVATAR &nbsp; H</span>
         <div className="logo__img">
           <img src="/logo_hou.png" alt="sdeaew" />
         </div>
+        <span class='title'>U</span>
       </div>
 
-      <ul className="container__left">
-        {/* {nav__link.map((item) => {
-          return (
-            <li className="container__left-item">
-              <NavLink to={item.path}>{item.display}</NavLink>
-            </li>
-          );
-        })} */}
-        {/* <li className='container__left-item'>
-                <button>
-                    <Link to='/register'>Đăng Ký</Link>
-                </button>
-            </li> */}
-        {/* <li className="container__left-item">
-          <button>
-            <Link to="login">Đăng Nhập</Link>
-          </button>
-        </li> */}
-      </ul>
-      <p id='title'>TÊN TRANG WEB</p>
 
         <CustemInput 
             type="text" 
             className="search__input"
             placeholder="Tìm kiếm khung"
         />
-        <NavLink id='login' to='/login'>Đăng nhập</NavLink>
+        {/* <NavLink id='login' to='/login'>Đăng nhập</NavLink> */}
     </div>
   );
 };
