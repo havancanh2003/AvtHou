@@ -4,16 +4,28 @@ import Sidebar from "../pages/Sidebar";
 import CreateAvata from "../pages/CreateAvata";
 import Login from "../pages/Login";
 import Frame from "../pages/Frame";
+<<<<<<< HEAD
+=======
+import FixSizeImg from "../pages/FixSizeImg";
+>>>>>>> bf0630acae302218cdff6e0bb9b6d808a6b86049
 // const Routers = () => {
 
 export const publicRouters = [
   { path: "/sidebar", component: Sidebar },
+<<<<<<< HEAD
   { path: "/create-frame", component: Frame },
   { path: "/create-avata", component: CreateAvata },
   { path: "/create-avata/:id", component: CreateAvata },
   { path: "/login", component: Login },
   { path: "/home", component: Home },
 
+=======
+  { path: "/home", component: Home },
+  { path: "/create-avata", component: CreateAvata },
+  { path: "/create-frame", component: Frame },
+  { path: "/home/custem", component: FixSizeImg },
+  { path: "/login", component: Login },
+>>>>>>> bf0630acae302218cdff6e0bb9b6d808a6b86049
 ];
 
 // return (

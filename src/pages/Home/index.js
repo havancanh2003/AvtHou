@@ -29,12 +29,21 @@ const Home = () => {
         placeholder="Tìm kiếm khung"
       /> */}
       {/* Trang chu , generate avata , contact  */}
+<<<<<<< HEAD
       <div className="container_frame">
         {frame.map((user) => (
           <Box props={user} />
         ))}
       </div>
       {/* <CreateAvata className="avt" /> */}
+=======
+      {/* <div className="container_frame">
+        {data.map((user) => (
+          <Box props={user} />
+        ))}
+      </div> */}
+      <CreateAvata className="avt" />
+>>>>>>> bf0630acae302218cdff6e0bb9b6d808a6b86049
     </section>
   );
 };

@@ -46,6 +46,7 @@ const Frame = () => {
       }
     }
   return (
+<<<<<<< HEAD
     <div className='container__avata'>
        <div className='container__input'>
             <label>Tên khung</label>
@@ -69,6 +70,25 @@ const Frame = () => {
               />
             <button type='submit' className='btn-success' onClick={handleSubmit}>Save</button>
        </div>
+=======
+    <div className="container__avata" id="frame_cr">
+      <div className="img__box">
+        <Link to="/home/custem">
+          {/* <canvas></canvas> */}
+          <img src="./logo.png" alt="" srcset="" />
+        </Link>
+      </div>
+      <div className="container__input">
+        <label>Chọn frame</label>
+        <input
+          type="file"
+          placeholder="Chọn farme"
+          name="farme"
+          id="upload-farme"
+        />
+        <button className="btn-success">Hoàn thành</button>
+      </div>
+>>>>>>> bf0630acae302218cdff6e0bb9b6d808a6b86049
     </div>
   );
 };
