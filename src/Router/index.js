@@ -14,10 +14,9 @@ export const publicRouters = [
   { path: "/sidebar", component: Sidebar },
 <<<<<<< HEAD
   { path: "/create-frame", component: Frame },
-  { path: "/create-avata", component: CreateAvata },
-  { path: "/create-avata/:id", component: CreateAvata },
   { path: "/login", component: Login },
   { path: "/home", component: Home },
+<<<<<<< HEAD
 
 =======
   { path: "/home", component: Home },
@@ -26,6 +25,9 @@ export const publicRouters = [
   { path: "/home/custem", component: FixSizeImg },
   { path: "/login", component: Login },
 >>>>>>> bf0630acae302218cdff6e0bb9b6d808a6b86049
+=======
+  { path: "/home/generate-avata/:id", component: Home },
+>>>>>>> anhdev
 ];
 
 // return (

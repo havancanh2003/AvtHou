@@ -5,10 +5,9 @@ import { publicRouters } from "./Router";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App" style={{ maxWidth: "100%" }}>
         <Routes>
           {publicRouters.map((route, index) => {
-            console.log(route.path);
             const Layout = route.layout || DefaultLayout;
             const Page = route.component;
             return (
