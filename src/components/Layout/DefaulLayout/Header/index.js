@@ -61,7 +61,7 @@ const Header = () => {
             </li> */}
         <li className="container__left-item">
           <button>
-            <Link to="login">Đăng Nhập</Link>
+            <Link to="/login">Đăng Nhập</Link>
           </button>
         </li>
       </ul>

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./Home.scss";
 import { Box } from "../../components/Box";
 // import { data } from "../../data_temp";
-import data from "../../Data/User.json";
 import CreateAvata from "../CreateAvata";
 import axios from "axios";
 // import CustemInput from "../../components/Custeminput";
@@ -15,6 +14,7 @@ const Home = () => {
     axios
       .get(url)
       .then((res) => {
+        setLoading(true);
         setFrame(res.data.data);
       })
       .catch((err) => {
@@ -31,11 +31,9 @@ const Home = () => {
       /> */}
       {/* Trang chu , generate avata , contact  */}
       <div className="container_frame">
-        {frame.map((user) => (
-          <Box props={user} />
-        ))}
+        {!loading ? <h1>Loading</h1> : frame.map((user) => <Box props={user} />)}
       </div>
-      <CreateAvata className="avt"/>
+      <CreateAvata className="avt" />
     </section>
   );
 };

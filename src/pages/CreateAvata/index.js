@@ -10,12 +10,12 @@ import { logDOM } from "@testing-library/react";
 
 const CreateAvata = () => {
   const [selectedFile, setSelectedFile] = useState(); // chọn file avata local
-  const [selectedFileFrame, setSelectedFrame] = useState(); // chọn frame local
+  // const [selectedFileFrame, setSelectedFrame] = useState(); // chọn frame local
   const [data, setData] = useState("./child.jpg"); // default value data crop
   const [frame, setFrame] = useState(); // data frame khi có frame thay đổi
   const [preview, setPreview] = useState(); // data avata khi get local , fomat blog
-  const [frameLocal, setFrameLocal] = useState(); // data frame khi get locaj
-  const { id } = useParams(); // id frame to data base
+  // const [frameLocal, setFrameLocal] = useState(); // data frame khi get locaj
+  let { id } = useParams(); // id frame to data base
 
   // create a preview as a side effect, whenever selected file is changed
   useEffect(() => {
@@ -29,16 +29,16 @@ const CreateAvata = () => {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
 
-  useEffect(() => {
-    if (!selectedFileFrame) {
-      setFrameLocal(undefined);
-      return;
-    }
-    const objectUrls = URL.createObjectURL(selectedFileFrame);
-    setFrameLocal(objectUrls);
-    // free memory when ever this component is unmounted
-    return () => URL.revokeObjectURL(objectUrls);
-  }, [selectedFileFrame]);
+  // useEffect(() => {
+  //   if (!selectedFileFrame) {
+  //     setFrameLocal(undefined);
+  //     return;
+  //   }
+  //   const objectUrls = URL.createObjectURL(selectedFileFrame);
+  //   setFrameLocal(objectUrls);
+  //   // free memory when ever this component is unmounted
+  //   return () => URL.revokeObjectURL(objectUrls);
+  // }, [selectedFileFrame]);
 
   const drowImg = (canvas, srcFrame, srcAvta) => {
     const ctx = canvas.getContext("2d");
@@ -93,14 +93,14 @@ const CreateAvata = () => {
     setSelectedFile(e.target.files[0]);
   };
 
-  const onSelectFileFrame = (e) => {
-    if (!e.target.files || e.target.files.length === 0) {
-      setSelectedFrame(undefined);
-      return;
-    }
-    // I've kept this example simple by using the first image instead of multiple
-    setSelectedFrame(e.target.files[0]);
-  };
+  // const onSelectFileFrame = (e) => {
+  //   if (!e.target.files || e.target.files.length === 0) {
+  //     setSelectedFrame(undefined);
+  //     return;
+  //   }
+  //   // I've kept this example simple by using the first image instead of multiple
+  //   setSelectedFrame(e.target.files[0]);
+  // };
   const [cropData, setCropData] = useState();
   const cropperRef = createRef();
   const onCrop = () => {
@@ -124,9 +124,10 @@ const CreateAvata = () => {
       });
   }, [id]);
 
-  const handleChooseFrame = () => {
-    setFrame(frameLocal);
-  };
+  // const handleChooseFrame = () => {
+  //   id = undefined;
+  //   setFrame(frameLocal);
+  // };
   return (
     <div className="container__avata">
       <div className="img-container">
@@ -176,7 +177,7 @@ const CreateAvata = () => {
           onChange={onSelectFileFinal}
         />
 
-        <label>Chọn farme</label>
+        {/* <label>Chọn farme</label>
         <input
           type="file"
           placeholder="Chọn farme"
@@ -185,7 +186,7 @@ const CreateAvata = () => {
           accept="image/*"
           onChange={onSelectFileFrame}
           onClick={handleChooseFrame}
-        />
+        /> */}
         <button className="btn-success" onClick={saveCrop}>
           Save
         </button>
