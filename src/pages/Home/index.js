@@ -8,18 +8,19 @@ import axios from "axios";
 // import CustemInput from "../../components/Custeminput";
 // import { Data } from './../../../node_modules/cropperjs/types/index.d';
 const Home = () => {
-  const [frame , setFrame] = useState([]);
-  const [loading , setLoading] = useState(false);
+  const [frame, setFrame] = useState([]);
+  const [loading, setLoading] = useState(false);
   const url = "http://localhost:4000/api/v1/frame/upload";
-  useEffect(()=>{
+  useEffect(() => {
     axios
-          .get(url)
-          .then((res) => {
-            console.log(res.data.data);
-              setFrame(res.data.data)
-          })
-          .catch(err => {alert(err)});
-  } ,[])
+      .get(url)
+      .then((res) => {
+        setFrame(res.data.data);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  }, []);
 
   return (
     <section>
@@ -34,7 +35,7 @@ const Home = () => {
           <Box props={user} />
         ))}
       </div>
-      {/* <CreateAvata className="avt" /> */}
+      <CreateAvata className="avt"/>
     </section>
   );
 };

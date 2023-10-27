@@ -9,11 +9,9 @@ import Frame from "../pages/Frame";
 export const publicRouters = [
   { path: "/sidebar", component: Sidebar },
   { path: "/create-frame", component: Frame },
-  { path: "/create-avata", component: CreateAvata },
-  { path: "/create-avata/:id", component: CreateAvata },
   { path: "/login", component: Login },
   { path: "/home", component: Home },
-
+  { path: "/home/generate-avata/:id", component: Home },
 ];
 
 // return (
